@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '_variables';
+@import '_reset';
+.main {
+    background-color: #6441a5;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    &-content {
+        background-color: #fff;
+        margin: 5% auto;
+        width: 500px;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 100px;    
+    &__title {
+        &::before {
+            content: '';
+            display: inline-block;
+            background-image: url('./../images/icon.png');
+            background-repeat: no-repeat;
+            background-size: 50px;
+            background-position: 50% 50%;
+            height: 50px;
+            position: relative;
+            top: 5px; // (height-parent - height-element) / 2
+            left: 2px;
+            width: 100px;
+        }
+        align-items: center;
+        display: inline-flex;
+        color: #6441a5;
+        font-weight: normal;
+        font-size: 2em;
+        height: 50px;
+        text-align: center;
+	}
+	&__twitch {
+		margin-left: 50px;
+	}
+}
+
+.twitch {
+	&__item {
+		background-color: red;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		outline: none;
+		padding: 3px;
+		width: 100%;
+		&--online {
+			background-color: green;
+		}
+		&--offline {
+			background-color: blueviolet;
+		}
+		&--closed {
+			background-color: red;
+		}
+	}
+}
