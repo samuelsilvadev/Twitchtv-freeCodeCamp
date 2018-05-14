@@ -59,7 +59,7 @@ gulp.task('scripts-deploy', () => {
 gulp.task('scripts-deploy-babel', () => {
 	return gulp.src('./dist/scripts/app.js')
 		.pipe(babel({
-			presets: ['env']
+			presets: ['env'],
 		}))
 		.pipe(gulp.dest(file => file.base));
 });
