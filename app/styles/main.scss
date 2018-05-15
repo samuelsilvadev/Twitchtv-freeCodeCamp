@@ -16,7 +16,8 @@
 .header {
     display: flex;
     align-items: center;
-    height: 100px;    
+    height: 100px;
+    justify-content: center;
     &__title {
         &::before {
             content: '';
@@ -38,29 +39,56 @@
         font-size: 2em;
         height: 50px;
         text-align: center;
-	}
-	&__twitch {
-		margin-left: 50px;
-	}
+        width: 80%;
+    }
+    &__twitch {
+        text-align: center;
+    }
 }
 
 .twitch {
-	&__item {
-		background-color: red;
-		border: none;
-		color: #fff;
-		cursor: pointer;
-		outline: none;
-		padding: 3px;
-		width: 100%;
-		&--online {
-			background-color: green;
-		}
-		&--offline {
-			background-color: blueviolet;
-		}
-		&--closed {
-			background-color: red;
-		}
-	}
+    &__item {
+        background-color: red;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+        padding: 3px;
+        width: 50%;
+        &--online {
+            background-color: green;
+        }
+        &--offline {
+            background-color: blueviolet;
+        }
+        &--closed {
+            background-color: red;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        &-content {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header {
+        flex-direction: column;
+        height: 200px;
+        &__title {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .header {
+        &__title {
+            height: 105px;
+        }
+    }
 }
