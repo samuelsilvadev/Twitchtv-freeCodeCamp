@@ -67,11 +67,45 @@
     }
 }
 
+.boxes-twitch {
+    border-top: 10px solid #6441a5;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    &__box {
+        margin: .5%;
+        width: 32%;
+        &--online {
+            background-color: green;
+        }
+        &--offline {
+            background-color: blueviolet;
+        }
+        &--closed {
+            background-color: red;
+        }
+        &__image {
+            width: 70%;
+            border-radius: 50%;
+            max-width: 100%;
+            padding: .5%;
+        }
+    }
+}
+
 @media screen and (max-width: 500px) {
     .main {
         &-content {
             width: 100%;
         }
+    }
+    .boxes-twitch {				
+        &__box {
+			width: 40%;
+		}
     }
 }
 
