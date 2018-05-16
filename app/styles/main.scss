@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import '_variables';
 @import '_reset';
+.hide {
+    animation: hide-box 1s;
+    animation-fill-mode: forwards;
+}
+
+.show {
+    animation: show-box 1s;
+    animation-fill-mode: forwards;
+}
+
 .main {
     background-color: #6441a5;
     height: 100vh;
@@ -55,6 +65,9 @@
         outline: none;
         padding: 3px;
         width: 50%;
+        &--selected {
+            opacity: .5;
+        }
         &--online {
             background-color: green;
         }
@@ -69,6 +82,7 @@
 
 .boxes-twitch {
     border-top: 10px solid #6441a5;
+    box-shadow: 0px 20px 20px 15px #6441a5;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -78,6 +92,7 @@
     &__box {
         margin: .5%;
         width: 32%;
+        transition: all 1s;
         &--online {
             background-color: green;
         }
@@ -91,21 +106,30 @@
             width: 70%;
             border-radius: 50%;
             max-width: 100%;
+            margin-top: 10px;
             padding: .5%;
+        }
+        &__title,
+        &__sub-title {
+            color: #fff;
+        }
+        &__sub-title {
+            margin-bottom: 10px;
         }
     }
 }
 
 @media screen and (max-width: 500px) {
     .main {
+        overflow: auto;
         &-content {
             width: 100%;
         }
     }
-    .boxes-twitch {				
+    .boxes-twitch {
         &__box {
-			width: 40%;
-		}
+            width: 40%;
+        }
     }
 }
 
@@ -124,5 +148,17 @@
         &__title {
             height: 105px;
         }
+    }
+}
+
+@keyframes hide-box {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+		opacity: 0;
+		visibility: hidden;
+        width: 0;
     }
 }

@@ -32,13 +32,13 @@ Twitch.prototype.getUsers = function getUsers() {
 Twitch.prototype.createBoxHTMLTwitch = function createBoxHTMLTwitch({ data, dataStream }) {
 	const { stream } = dataStream;
 	return `
-	<div class="boxes-twitch__box ${ dataStream.stream ? 'boxes-twitch__box--online' : 'boxes-twitch__box--offline'}">
+	<div data-js="${ stream ? 'online' : 'offline'}" class="boxes-twitch__box ${dataStream.stream ? 'boxes-twitch__box--online' : 'boxes-twitch__box--offline'}">
 		<a href="https://www.twitch.tv/${data.name}" target="_blank">	
 			<img class="boxes-twitch__box__image" src="${data.logo || 'http://via.placeholder.com/150x150'}" alt="150X150">
 		</a>
 		<h4 class="boxes-twitch__box__title">${data.display_name}</h4>
-		<p title="">
-			${stream ? stream.channel.status.substring(0, 20) : ''}
+		<p class="boxes-twitch__box__sub-title" title="${stream ? stream.channel.status : ''}">
+			${stream ? stream.channel.status.substring(0, 20).toLowerCase() : 'we don\'t know :c'}
 		</p>
 	</div>`;
 };

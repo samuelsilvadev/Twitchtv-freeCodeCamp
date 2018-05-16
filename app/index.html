@@ -15,9 +15,9 @@
 			<header class="header">
 				<h4 class="header__title">Twitch Streamers</h4>
 				<div class="header__twitch twitch">
-					<button class="twitch__item twitch__item--closed">All</button>
-					<button class="twitch__item twitch__item--online">online</button>
-					<button class="twitch__item twitch__item--offline">offline</button>
+					<button data-js="twitch-btn-state" data-state="all" class="twitch__item twitch__item--closed twitch__item--selected">All</button>
+					<button data-js="twitch-btn-state" data-hide="offline" class="twitch__item twitch__item--online">online</button>
+					<button data-js="twitch-btn-state" data-hide="online" class="twitch__item twitch__item--offline">offline</button>
 				</div>
 			</header>
 			<section data-js="boxes-twitch" class="boxes-twitch">
