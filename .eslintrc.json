@@ -12,6 +12,7 @@
 		"prefer-promise-reject-errors": 0,
 		"no-underscore-dangle": 0,
 		"arrow-body-style": 0,
-		"global-require": 0
+		"global-require": 0,
+		"strict": 0
 	}
 }

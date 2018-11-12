@@ -1,4 +1,4 @@
-'use strint';
+'use strict';
 
 (function init(window, document) {
 	const $boxTwitchs = document.querySelector('[data-js="boxes-twitch"]');
