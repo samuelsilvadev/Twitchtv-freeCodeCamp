@@ -19,7 +19,7 @@ const runSequence = require('run-sequence');
 gulp.task('browserSync', () => {
 	browserSync({
 		server: {
-			baseDir: './',
+			baseDir: './dist/',
 		},
 		notify: false,
 	});
@@ -135,7 +135,7 @@ gulp.task('scaffold', () => {
 		]));
 });
 
-gulp.task('default', ['browserSync', 'scripts', 'styles', 'html-deploy'], () => {
+gulp.task('default', ['browserSync', 'scripts', 'styles', 'html-deploy', 'images'], () => {
 	gulp.watch('app/scripts/**', ['scripts']);
 	gulp.watch('app/styles/**', ['styles']);
 	gulp.watch('app/images/**', ['images']);
